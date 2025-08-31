@@ -56,3 +56,7 @@ class Task(SQLModel, table=True):
 
 class Test(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
+    score: Optional[float] = Field(
+        default=0,
+        sa_column_kwargs={"comment": "测试分数"}
+    )
